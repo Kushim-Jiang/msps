@@ -1,22 +1,25 @@
 \documentclass{beamer}
 
-\usetheme{Copenhagen}
+\usetheme{Frankfurt}
 \usecolortheme{orchid}
 
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{xypic}
+
 \usepackage[english]{babel}
 \usepackage[UTF8,noindent]{ctexcap}
 \usepackage[bookmarks=true]{hyperref}
 
 \title[MSPS]{Modern Script Processing System}
+\subtitle{Hierarchy, History and Terminology}
 
-\author{Kushim Jiang}
+\author{Zhaoqin Jiang (Kushim)}
 \institute{
 	Institute of Software, Chinese Academy of Sciences \\ 
 	\medskip
-	\textit{https://github.com/Kushim-Jiang/msps} \\
-    \textit{jiangzhaoqin@iscas.ac.cn}
+	\url{https://github.com/Kushim-Jiang/msps} \\
+    \url{mailto:jiangzhaoqin@iscas.ac.cn}
 }
 \date{\today}
 
@@ -30,40 +33,248 @@
 		\frametitle{Overview}
 		\tableofcontents
 	\end{frame}
+
+	% ------------------------
+	% Physical Layer
+	% ------------------------
 	
 	\section{Physical Layer}
 	
-    \subsection{Physical Text}
-	
 	\begin{frame}
 		\frametitle{Physical Text}
-		\textit{A text is a \textbf{physical object} that can be \textbf{read}, consisting of a set of \textbf{signs} that can be reconstructed by a reader or observer if sufficient interpretants are present, and is evaluated primarily based on its \textbf{content} rather than its physical form or \textbf{medium} of representation.}
+
+		\begin{itemize}
+			\item physical text
+			\begin{itemize}
+				\item \textbf{medium}: physical object as carrier
+				\item \textbf{content}: physical object as been carried
+			\end{itemize}
+			\item ``reading'' process
+			\begin{itemize}
+				\item \textbf{glottography}: script (writing system)
+				\item \textbf{semasiography}: symbol (notation system)
+			\end{itemize}
+			\item ``writing'' process
+			\begin{itemize}
+				\item \textbf{writing} (painting): bamboo-silk, papyrus
+				\item \textbf{engraving} (carving): oracle-bone, bronze
+				\item \textbf{spraying}
+				\item \textbf{embossing}: braille
+				\item \textbf{debossing}: cuneiform clay tablet
+			\end{itemize}
+		\end{itemize}
 	\end{frame}
 	
-	\subsection{Content of Research}
-	
 	\begin{frame}
-		\frametitle{Content of Research}
+		\frametitle{Research and Terminology}
+
 		\begin{itemize}
-			\item medium production (stable material, easy to carry \ldots)
-			\item content production (stable material, wide range of color \ldots)
-			\item ``printing'' process
+			\item medium
 			\begin{itemize}
-                \item ``printing'' progress (writing, engraving, printing \ldots)
-                \item ``printing'' method (hard material, easy to reproduce \ldots)
+                \item material classification
+                \item production technology: stable material, easy to carry, ...
             \end{itemize}
-            \item reading process (imaging, photography, eye movement \ldots)
+            \item content
+			\begin{itemize}
+                \item material classification
+                \item production technology: stable material, wide range of color, ...
+            \end{itemize}
+            \item ``reading'' process
+			\begin{itemize}
+                \item physiology: eye movement, eye focus, ...
+                \item environment: imaging, photography, ...
+            \end{itemize}
+            \item ``writing'' process
+			\begin{itemize}
+                \item behavior: calligraphy, penmanship, ...
+                \item tool: pen, brush, ...
+                \item tool production technology
+            \end{itemize}
 		\end{itemize}
 	\end{frame}
     
-    \section{Typesetting Layer}
+	% ------------------------
+	% Layout Layer
+	% ------------------------
+	
+    \section{Layout Layer}
+
+	\begin{frame}
+		\frametitle{Layout}
+		
+		\begin{itemize}
+			\item physical text reproduction
+			\begin{itemize}
+                \item demand: different medium with same content
+                \item fake reproduction: bind multiple pens
+                \item ``macro'' reproduction: \textbf{printing}
+                \item \color{gray} ``micro'' reproduction: \textbf{autowriting}
+            \end{itemize}
+            \item stamp and plate
+			\begin{itemize}
+				\item \textbf{stamping}: make \textbf{stamp} once, then \textbf{stamp} multiple times
+				\item \textbf{printing}: make \textbf{plate} once, then \textbf{print} multiple times
+            \end{itemize}
+            \item plate and layout
+			\begin{itemize}
+				\item \textbf{plate}: the generalization of different pages of physical texts
+				\item \textbf{layout}: the abstraction of plate, that is, the plate \textbf{without} material information
+            \end{itemize}
+			\color{gray} \item autowriting
+			\begin{itemize}
+				\color{gray} \item \textbf{autowriting}: write \textbf{code} once, then \textbf{run} multiple times
+				\color{gray} \item \textbf{layout}: the instruction \textbf{without} data structure information
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Generalization and Abstraction}
+
+		\begin{columns}[c]
+			% left
+			\column{.45\textwidth}
+
+			\xymatrix{
+				& {layout} \ar[dl]_{print}  \\
+				{text}  \ar@<.2em>[r]^{g.} & {plate} \ar[u]_{a.} \ar@<.2em>[l]^{stamp}
+			}
+
+			% right
+			\column{.5\textwidth}
+			
+			\xymatrix{
+				& {layout} \ar[dl]_{autowrite}  \\
+				{text}  \ar@<.2em>[r]^{g.} & {code} \ar[u]_{a.} \ar@<.2em>[l]^{run}
+			}
+		\end{columns}
+
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Research and Terminology}
+
+		\begin{itemize}
+			\item layout
+			\begin{itemize}
+                \item layout element: text block, image, running head, ...
+				\item layout metrics: interlinear spacing, head margin, ...
+				\item layout specification: hyphenation, indentation, ...
+				\item layout style: Villard's Figure, Van de Graaf canon, ...
+            \end{itemize}
+			\item layout production
+			\begin{itemize}
+				\item layout conversion: rasterization, coloration, ...
+				\item layout design practice: Adobe InDesign, Pages, ...
+			\end{itemize}
+            \item plate production
+			\begin{itemize}
+                \item material classification: woodblock, sterotype, lithography, ...
+                \item production technology: engraving, casting, ...
+                \item middleware: wax, mould, ...
+            \end{itemize}
+            \item printing process
+			\begin{itemize}
+                \item GB 9851 (.1 -- .9): \textsl{Terminology of Graphic Technology}
+            \end{itemize}
+		\end{itemize}
+	\end{frame}
 
     \section{Typeface Layer}
 
+	\begin{frame}
+		\frametitle{Glyph Image}
+		
+		\begin{itemize}
+			\item plate reproduction
+			\begin{itemize}
+                \item demand: different plate with same letter shapes
+                \item ``macro'' reproduction: \textbf{typesetting}
+                \item \color{gray} ``micro'' reproduction: \textbf{typewriting}
+            \end{itemize}
+            \item type
+			\begin{itemize}
+				\item \textbf{typesetting}: make \textbf{types}, then \textbf{typeset} multiple times to make \textbf{plate}, then \textbf{print} multiple times
+            \end{itemize}
+            \item type and glyph image
+			\begin{itemize}
+				\item \textbf{type}: the generalization of different shapes in plate
+				\item \textbf{glyph image}: the abstraction of type, that is, the type \textbf{without} material information
+			\end{itemize}
+			\item type as generalization of plate
+			\begin{itemize}
+				\item \textbf{typesetting}: by appearance
+				\item \textbf{phototypesetting}: by size, then by transformation
+				\item \textbf{variable font}: by design space
+            \end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Generalization and Abstraction}
+
+		\begin{columns}[c]
+			% left
+			\column{.45\textwidth}
+
+			\xymatrix{
+				& & {glyph~image} \ar[dl]_{design} \\
+				& {layout} \ar[dl]_{print} \ar@<.2em>[r]^{g.} & {instance} \ar[u]_{a.} \ar@<.2em>[l]^{combine} \\
+				{text} \ar@<.2em>[r]^{g.} & {plate} \ar[u]_{a.} \ar@<.2em>[l]^{stamp} \ar@<.2em>[r]^{g.} & {type} \ar[u]_{a.} \ar@<.2em>[l]^{typeset}
+			}
+
+			% right
+			\column{.5\textwidth}
+			
+			\begin{center}
+				[typewrite?]
+			\end{center}
+		\end{columns}
+
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Research and Terminology}
+
+		\begin{itemize}
+			\item glyph image
+			\begin{itemize}
+                \item glyph image data: bitmap, Bézier curve, master, ...
+				\item glyph image component: serif, counter, stroke, ascender, ...
+				\item glyph image metrics: kerning, optical size, x-height, ...
+				\item glyph image style: Garamond, Palatino, Bodoni, Fraktur, ...
+			\end{itemize}
+			\item glyph image production
+			\begin{itemize}
+                \item glyph image design practice: Glyphs, UFO, ...
+            \end{itemize}
+            \item type production
+			\begin{itemize}
+                \item material classification: wooden type, metal type, ...
+                \item production technology and typesetting technology: Monotype, Linotype, ...
+            \end{itemize}
+		\end{itemize}
+	\end{frame}
+
     \section{Form Layer}
+
+	\begin{frame}
+	\end{frame}
+	
+	\begin{frame}
+	\end{frame}
 
     \section{Character Layer}
 
+	\begin{frame}
+	\end{frame}
+	
+	\begin{frame}
+	\end{frame}
+
     \section{Hyper-Character Layer}
+
+	\begin{frame}
+	\end{frame}
 
 \end{document} 

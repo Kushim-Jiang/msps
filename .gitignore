@@ -7,3 +7,6 @@
 *.gz
 *.toc
 *.vrb
+*.fdb_latexmk
+*.fls
+*.dvi
