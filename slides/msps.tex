@@ -12,7 +12,7 @@
 \usepackage[bookmarks=true]{hyperref}
 
 \title[MSPS]{Modern Script Processing System}
-\subtitle{Hierarchy, History and Terminology}
+\subtitle{A Historical and Hierarchical Review}
 
 \author{Zhaoqin Jiang (Kushim)}
 \institute{
@@ -133,7 +133,7 @@
 
 		\begin{columns}[c]
 			% left
-			\column{.45\textwidth}
+			\column{.5\textwidth}
 
 			\xymatrix{
 				& {layout} \ar[dl]_{print}  \\
@@ -169,13 +169,13 @@
 			\end{itemize}
             \item plate production
 			\begin{itemize}
-                \item material classification: woodblock, sterotype, lithography, ...
+                \item material classification: woodblock, stereotype, lithography, ...
                 \item production technology: engraving, casting, ...
                 \item middleware: wax, mould, ...
             \end{itemize}
             \item printing process
 			\begin{itemize}
-                \item GB 9851 (.1 -- .9): \textsl{Terminology of Graphic Technology}
+                \item GB 9851 (.1 -- .9): \textit{Terminology of Graphic Technology}
             \end{itemize}
 		\end{itemize}
 	\end{frame}
@@ -188,13 +188,14 @@
 		\begin{itemize}
 			\item plate reproduction
 			\begin{itemize}
-                \item demand: different plate with same letter shapes
+                \item demand: reuse letter shapes to produce plates
                 \item ``macro'' reproduction: \textbf{typesetting}
                 \item \color{gray} ``micro'' reproduction: \textbf{typewriting}
             \end{itemize}
             \item type
 			\begin{itemize}
-				\item \textbf{typesetting}: make \textbf{types}, then \textbf{typeset} multiple times to make \textbf{plate}, then \textbf{print} multiple times
+				\item \textbf{typesetting} and \textbf{typography}: make \textbf{types}, then \textbf{typeset} multiple times to make \textbf{plate}, then \textbf{print} multiple times
+				\item \textbf{font} and \textbf{typeface}: a set of types, and style of them
             \end{itemize}
             \item type and glyph image
 			\begin{itemize}
@@ -215,7 +216,7 @@
 
 		\begin{columns}[c]
 			% left
-			\column{.45\textwidth}
+			\column{.6\textwidth}
 
 			\xymatrix{
 				& & {glyph~image} \ar[dl]_{design} \\
@@ -224,7 +225,7 @@
 			}
 
 			% right
-			\column{.5\textwidth}
+			\column{.4\textwidth}
 			
 			\begin{center}
 				[typewrite?]
@@ -246,7 +247,7 @@
 			\end{itemize}
 			\item glyph image production
 			\begin{itemize}
-                \item glyph image design practice: Glyphs, UFO, ...
+                \item glyph image design (type design) practice: Glyphs, UFO, ...
             \end{itemize}
             \item type production
 			\begin{itemize}
@@ -259,22 +260,179 @@
     \section{Form Layer}
 
 	\begin{frame}
+		\frametitle{Glyph}
+		
+		\begin{itemize}
+			\item font change
+			\begin{itemize}
+                \item demand: reuse letter shapes to produce plates
+                \item ``macro'' reproduction: \textbf{glyph set}
+                \item \color{gray} ``micro'' reproduction: \textbf{teletype} (telegram)
+            \end{itemize}
+			\item glyph image and glyph
+			\begin{itemize}
+				\item font setting: make glyph sequence, then change different fonts
+				\item \textbf{font file}: data file providing design for glyph
+				\item \textbf{glyph}: the abstraction of glyph image, that is, the glyph image \textbf{without} shape information
+			\end{itemize}
+            \item glyph as generalization of glyph image
+			\begin{itemize}
+				\item \textbf{code character set}: typeface
+				\item \textbf{substitution feature}: small caps, old figures, ...
+				\item \textbf{variation}: handwriting, punctuation, ...
+            \end{itemize}
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Generalization and Abstraction}
+
+		\begin{columns}[c]
+			% left
+			\column{.75\textwidth}
+
+			\xymatrix{
+				& & & {glyph} \ar[dl]_{design} \\
+				& & {glyph~image} \ar[dl]_{design} \ar@<.2em>[r]^{g.} & {glyph~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose} \\
+				& {layout} \ar[dl]_{print} \ar@<.2em>[r]^{g.} & {instance} \ar[u]_{a.} \ar@<.2em>[l]^{combine} \ar@<.2em>[r]^{g.} & {layout~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose} \\
+				{text} \ar@<.2em>[r]^{g.} & {plate} \ar[u]_{a.} \ar@<.2em>[l]^{stamp} \ar@<.2em>[r]^{g.} & {type} \ar[u]_{a.} \ar@<.2em>[l]^{typeset} \ar@<.2em>[r]^{g.} & {text~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose}
+			}
+
+			% right
+			\column{.25\textwidth}
+			
+			\begin{center}
+				[teletype?]
+			\end{center}
+		\end{columns}
+
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Research and Terminology}
+
+		\begin{itemize}
+			\item graphetics and graphemics (graphematics)
+			\begin{itemize}
+                \item graphetics: study of writing practice
+				\item graphemics: study of writing system
+			\end{itemize}
+			\item graphemics (graphematics)
+			\begin{itemize}
+				\item \textbf{graphemics}: ``the study of the writing system from the smallest units to the text'' \textcolor{gray}{(Fuhrhop and Peters, \textit{Einführung in die Phonologie und Graphematik})}
+				\item \textbf{grapheme} \& \textbf{graph}: referential conception and analogical conception \textcolor{gray}{(Kohrt, ``The term `grapheme' in the history and theory of linguistics'')}
+				\item \textbf{graphotactics}: restrictions on graphemes, such as combination \textcolor{gray}{(McCawley, ``Some graphotactic constraints'')}
+				\item \textbf{allography}: graphetic, graphematic (letter a), orthographic (ss \& ß) \textcolor{gray}{(Bunčić, ``A heuristic model for typology'')}
+            \end{itemize}
+        \end{itemize}
 	\end{frame}
 
     \section{Character Layer}
 
 	\begin{frame}
+		\frametitle{Character}
+		
+		\begin{itemize}
+			\item text shaping
+			\begin{itemize}
+                \item demand: choose different glyphs for the same letter
+                \item result: \textbf{character set}
+            \end{itemize}
+			\item glyph and character
+			\begin{itemize}
+				\item \textbf{glyph}: letter with actual form (letter a)
+				\item \textbf{character}: the abstraction of glyph, that is, the glyph \textbf{without} form information
+			\end{itemize}
+            \item character as generalization of glyph
+			\begin{itemize}
+				\item \textbf{cursive joining}: Arabic, Mongolian, ...
+				\item \textbf{abstract shape}: CJK Ideographs, Tangut, ...
+				\item \textbf{phoneme}: Tai Tham, Tibetan, ...
+            \end{itemize}
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Generalization and Abstraction}
+
+		\xymatrix{
+			& & & & {character} \ar[dl]_{shape} \\
+			& & & {glyph} \ar[dl]_{design} \ar@<.2em>[r]^{g.} & {variant} \ar[u]_{a.} \ar@<.2em>[l]^{revert} \\
+			& & {glyph~image} \ar[dl]_{design} \ar@<.2em>[r]^{g.} & {glyph~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose} \ar@<.2em>[r]^{g.} & {glyph~file} \ar[u]_{a.} \ar@<.2em>[l]^{revert} \\
+			& {layout} \ar[dl]_{print} \ar@<.2em>[r]^{g.} & {instance} \ar[u]_{a.} \ar@<.2em>[l]^{combine} \ar@<.2em>[r]^{g.} & {layout~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose} \ar@<.2em>[r]^{g.} & {layout~file} \ar[u]_{a.} \ar@<.2em>[l]^{revert} \\
+			{text} \ar@<.2em>[r]^{g.} & {plate} \ar[u]_{a.} \ar@<.2em>[l]^{stamp} \ar@<.2em>[r]^{g.} & {type} \ar[u]_{a.} \ar@<.2em>[l]^{typeset} \ar@<.2em>[r]^{g.} & {text~file} \ar[u]_{a.} \ar@<.2em>[l]^{choose} \ar@<.2em>[r]^{g.} & {text~file} \ar[u]_{a.} \ar@<.2em>[l]^{revert}
+		}
+
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Research and Terminology}
+
+		\begin{itemize}
+			\item character set model
+			\begin{itemize}
+                \item \textbf{graphemic model}: language weakly-intervened
+				\begin{itemize}
+					\item natural model
+					\item component model
+					\item Arabic model
+				\end{itemize}
+				\item \textbf{phonemic model}: language strongly-intervened
+				\begin{itemize}
+					\item ligature and conjunct
+					\item Brahmi model
+					\item phonemic model
+				\end{itemize}
+			\end{itemize}
+			\item text shaping
+			\begin{itemize}
+				\item \textbf{text shaping}: from character sequence to glyph sequence
+				\item \textbf{text representation}: from glyph sequence to character sequence
+            \end{itemize}
+        \end{itemize}
 	\end{frame}
 
     \section{Hyper-Character Layer}
 
 	\begin{frame}
+		\frametitle{Hyper-Character}
+		
+		\begin{itemize}
+			\item character generalization
+			\begin{itemize}
+                \item synchrony
+                \begin{itemize}
+					\item example: Simplified Chinese \& Traditional Chinese
+					\item Wang Ning: allograph \& alloideograph
+					\item Chen Jian: abstract ideograph (?)
+				\end{itemize}
+                \item diachrony
+                \begin{itemize}
+					\item evolution of writing systems
+				\end{itemize}
+            \end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	\section{Summary}
+
+	\begin{frame}
+		\frametitle{Summary}
+		
+		\begin{itemize}
+			\item history and hierarchy
+			\begin{itemize}
+                \item \textbf{history}: diachrony (not a timeline)
+                \item \textbf{hierarchy}: synchrony
+                \item hierarchy is historical, history is hierarchical
+            \end{itemize}
+			\item research and terminology
+			\begin{itemize}
+                \item \textbf{terminology}: ontological elements
+                \item \textbf{research}: ontological structure
+                \item terminology and research are historical and hierarchical
+            \end{itemize}
+		\end{itemize}
 	\end{frame}
 
 \end{document} 
